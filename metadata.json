@@ -1,0 +1,6 @@
+{
+  "name": "WhatsApp Bot Pairing Portal",
+  "description": "CHAMIDU MD personal project showcase and professional WhatsApp Multi-Device connection pairing portal featuring modern neon styling, desk setup aesthetics, and real-time credentials configuration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
