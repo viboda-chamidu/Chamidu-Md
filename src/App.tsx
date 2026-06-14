@@ -219,8 +219,13 @@ export default function App() {
             {/* Header: CHAMIDU MD */}
             <header className="border-b border-zinc-800/80 pb-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center space-x-3.5">
-                <div className="w-10 h-10 bg-gradient-to-tr from-[#00f0ff]/20 to-[#ff007f]/20 border border-[#00f0ff]/30 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.1)]">
-                  <Flame className="w-5 h-5 text-[#00f0ff] animate-pulse" />
+                <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#00f0ff]/40 shadow-[0_0_15px_rgba(0,240,255,0.15)] flex items-center justify-center bg-zinc-950">
+                  <img 
+                    src="https://www.image2url.com/r2/default/images/1781408911053-06b843ec-4787-491a-9072-8fb268ae1048.png" 
+                    alt="Chamidu MD Logo" 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
@@ -296,10 +301,10 @@ export default function App() {
                 <div className="space-y-8 animate-fadeIn duration-500 select-text">
                   
                   {/* Hero Block */}
-                  <div className="p-8 sm:p-12 rounded-3xl bg-zinc-950/40 border border-zinc-800/80 relative overflow-hidden backdrop-blur-sm shadow-xl flex flex-col justify-between min-h-[280px]">
+                  <div className="p-8 sm:p-12 rounded-3xl bg-zinc-950/40 border border-zinc-800/80 relative overflow-hidden backdrop-blur-sm shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 min-h-[280px]">
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#00f0ff]/60 to-transparent" />
                     
-                    <div className="space-y-4">
+                    <div className="space-y-4 flex-1">
                       <div className="flex items-center space-x-2 text-[#00f0ff] font-mono text-[10px] uppercase tracking-widest font-bold">
                         <Activity className="w-3.5 h-3.5 animate-spin" />
                         <span>INTERACTIVE SHOWCASE DIRECTORY</span>
@@ -314,16 +319,25 @@ export default function App() {
                       <p className="text-zinc-400 text-xs sm:text-sm max-w-2xl leading-relaxed font-sans">
                         Welcome to my professional creative workspace. Harnessing the raw velocity of Node, react-mesh, cloud servers, and full-stack API pipelines. Pair your site below or inspect any modular node.
                       </p>
+
+                      <div className="mt-8 flex flex-wrap gap-4 items-center">
+                        <button
+                          onClick={() => setActiveTab("pair")}
+                          className="px-6 py-3 bg-gradient-to-r from-[#ff007f]/20 to-pink-500/20 border border-[#ff007f]/50 text-pink-300 font-bold text-xs uppercase tracking-wider rounded-xl hover:text-white hover:border-[#ff007f] transition-all cursor-pointer flex items-center gap-2 hover:shadow-[0_0_15px_rgba(255,0,127,0.15)] animate-pulse"
+                        >
+                          <Bot className="w-4 h-4 text-[#ff007f]" />
+                          <span>Deploy / Link Partner WhatsApp bot</span>
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap gap-4 items-center">
-                      <button
-                        onClick={() => setActiveTab("pair")}
-                        className="px-6 py-3 bg-gradient-to-r from-[#ff007f]/20 to-pink-500/20 border border-[#ff007f]/50 text-pink-300 font-bold text-xs uppercase tracking-wider rounded-xl hover:text-white hover:border-[#ff007f] transition-all cursor-pointer flex items-center gap-2 hover:shadow-[0_0_15px_rgba(255,0,127,0.15)] animate-pulse"
-                      >
-                        <Bot className="w-4 h-4 text-[#ff007f]" />
-                        <span>Deploy / Link Partner WhatsApp bot</span>
-                      </button>
+                    <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-tr from-[#00f0ff] to-[#ff007f] shadow-[0_0_20px_rgba(0,240,255,0.25)] flex items-center justify-center bg-zinc-950">
+                      <img 
+                        src="https://www.image2url.com/r2/default/images/1781408911053-06b843ec-4787-491a-9072-8fb268ae1048.png" 
+                        alt="Chamidu MD Bot" 
+                        className="w-full h-full object-cover rounded-2xl"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
                   </div>
 
