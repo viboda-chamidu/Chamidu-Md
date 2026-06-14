@@ -35,7 +35,7 @@ import { AnimatePresence } from "motion/react";
 
 export default function App() {
   // Navigation State
-  const [activeTab, setActiveTab] = useState<"home" | "work" | "services" | "about" | "contact" | "pair">("home");
+  const [activeTab, setActiveTab] = useState<"home" | "work" | "commands" | "contact" | "pair">("home");
 
   // Keyboard backlit color mode
   const [kbColor, setKbColor] = useState<"cyan" | "magenta" | "blue" | "rainbow">("rainbow");
@@ -244,24 +244,14 @@ export default function App() {
                   Home
                 </button>
                 <button
-                  onClick={() => setActiveTab("services")}
+                  onClick={() => setActiveTab("commands")}
                   className={`px-3 py-1.5 text-xs rounded-lg transition-all cursor-pointer font-medium ${
-                    activeTab === "services"
+                    activeTab === "commands"
                       ? "bg-gradient-to-r from-[#00f0ff]/15 to-[#3b82f6]/15 border-b border-[#00f0ff]/50 text-white shadow-[0_0_12px_rgba(0,240,255,0.05)]"
                       : "text-zinc-400 hover:text-white hover:bg-zinc-900/40"
                   }`}
                 >
-                  Services
-                </button>
-                <button
-                  onClick={() => setActiveTab("about")}
-                  className={`px-3 py-1.5 text-xs rounded-lg transition-all cursor-pointer font-medium ${
-                    activeTab === "about"
-                      ? "bg-gradient-to-r from-[#00f0ff]/15 to-[#3b82f6]/15 border-b border-[#00f0ff]/50 text-white shadow-[0_0_12px_rgba(0,240,255,0.05)]"
-                      : "text-zinc-400 hover:text-white hover:bg-zinc-900/40"
-                  }`}
-                >
-                  About
+                  Commands
                 </button>
                 <button
                   onClick={() => setActiveTab("contact")}
@@ -440,58 +430,15 @@ export default function App() {
 
 
 
-              {/* TAB 3: SERVICES */}
-              {activeTab === "services" && (
+              {/* TAB 3: COMMANDS */}
+              {activeTab === "commands" && (
                 <div className="space-y-8 animate-fadeIn duration-500 select-text">
                   <div>
                     <h2 className="text-2xl font-bold tracking-tight text-[#ff007f] font-mono flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#ff007f] shadow-[0_0_8px_#ff007f]"></span>
-                      SERVICES & BOT SYSTEMS
+                      CHAMIDU MD BOT COMMANDS
                     </h2>
-                    <p className="text-xs text-zinc-400 font-sans mt-1">Explore our engineered system capabilities and integrated command pipelines below.</p>
-                  </div>
-
-                  {/* HIGH FIDELITY CORE CAPABILITIES */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-5 rounded-2xl bg-[#0b0b0f] border border-zinc-850 space-y-2 relative group hover:border-[#00f0ff]/20 transition-all">
-                      <div className="flex items-center space-x-2 text-[#00f0ff]">
-                        <Briefcase className="w-5 h-5" />
-                        <h3 className="font-bold text-sm uppercase font-mono text-white">Full-Stack Application Design</h3>
-                      </div>
-                      <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-                        Engineering beautiful interactive frontend web apps with lightning fast backend proxy servers. High standard of visual craftsmanship paired with responsive performance indicators.
-                      </p>
-                    </div>
-
-                    <div className="p-5 rounded-2xl bg-[#0b0b0f] border border-zinc-855 space-y-2 relative group hover:border-[#ff007f]/20 transition-all">
-                      <div className="flex items-center space-x-2 text-[#ff007f]">
-                        <Activity className="w-5 h-5" />
-                        <h3 className="font-bold text-sm uppercase font-mono text-white">API Integration & Chat Sockets</h3>
-                      </div>
-                      <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-                        Specialized integrations of Baileys WhatsApp sockets, real-time EventSockets, server push notification pipelines, and multi-threaded service synchronization.
-                      </p>
-                    </div>
-
-                    <div className="p-5 rounded-2xl bg-[#0b0b0f] border border-zinc-850 space-y-2 relative group hover:border-[#00f0ff]/20 transition-all">
-                      <div className="flex items-center space-x-2 text-blue-400">
-                        <Shield className="w-5 h-5" />
-                        <h3 className="font-bold text-sm uppercase font-mono text-white">Secure Sandbox Pipelines</h3>
-                      </div>
-                      <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-                        Building sandboxed visual testing monitors that allow secure simulations for developers before rolling code credentials to live production server networks.
-                      </p>
-                    </div>
-
-                    <div className="p-5 rounded-2xl bg-[#0b0b0f] border border-zinc-850 space-y-2 relative group hover:border-emerald-500/20 transition-all">
-                      <div className="flex items-center space-x-2 text-emerald-400">
-                        <Globe className="w-5 h-5" />
-                        <h3 className="font-bold text-sm uppercase font-mono text-white">Global Cloud Deployment</h3>
-                      </div>
-                      <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-                        Automated compilation files generation (app.json, package.json, config.js) to allow deployment on Heroku, Railway, Render, or isolated containers natively.
-                      </p>
-                    </div>
+                    <p className="text-xs text-zinc-400 font-sans mt-1">Explore and search the complete list of WhatsApp bot client commands and automated service pipelines.</p>
                   </div>
 
                   {/* NEON BOT SERVICES COMMANDS REGISTRY */}
@@ -651,83 +598,6 @@ export default function App() {
                             </div>
                           );
                         })}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* TAB 4: ABOUT */}
-              {activeTab === "about" && (
-                <div className="space-y-6 animate-fadeIn duration-500 select-text">
-                  <div className="p-6 sm:p-8 rounded-3xl bg-zinc-900/45 border border-zinc-800/85 relative overflow-hidden backdrop-blur-sm shadow-xl space-y-6">
-                    {/* Glowing neon ambient styling */}
-                    <div className="absolute top-0 right-0 w-36 h-36 bg-[#00f0ff]/10 rounded-full blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 w-36 h-36 bg-[#ff007f]/05 rounded-full blur-3xl pointer-events-none" />
-
-                    <div className="flex flex-col md:flex-row items-center gap-6 pb-6 border-b border-zinc-800/60">
-                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-[#00f0ff] to-[#ff007f] shrink-0 flex items-center justify-center text-black font-extrabold text-2xl font-mono shadow-[0_0_20px_rgba(0,240,255,0.2)]">
-                        CMD
-                      </div>
-                      <div className="space-y-1 text-center md:text-left flex-1">
-                        <span className="text-[10px] text-[#ff007f] uppercase tracking-widest font-bold block font-mono">Biographical Registry</span>
-                        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-mono">About Chamidu MD</h2>
-                        <h3 className="text-base sm:text-lg font-bold font-mono tracking-wide mt-1 text-[#00f0ff] drop-shadow-[0_0_12px_rgba(0,240,255,0.4)] uppercase">
-                          Welcome to Chamidu MD
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4 text-zinc-300 text-sm leading-relaxed max-w-4xl font-sans">
-                      <p>
-                        I am a passionate developer and digital creator dedicated to building efficient, modern, and user-centric digital solutions.
-                      </p>
-                      <p>
-                        This platform serves as a hub for my latest projects, coding ventures, and creative work. Driven by curiosity and a commitment to continuous learning, I focus on turning complex ideas into clean, functional code. Whether it's automation, web development, or content creation, my goal is to build tools that make a difference.
-                      </p>
-                    </div>
-
-                    <div className="pt-2 flex flex-wrap gap-4">
-                      <a
-                        href="https://github.com/viboda-chamidu"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-5 py-2.5 bg-gradient-to-r from-zinc-900 to-zinc-950 hover:from-[#00f0ff]/10 hover:to-[#3b82f6]/10 text-white border border-[#00f0ff]/30 hover:border-[#00f0ff] font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center gap-2 shadow-md group"
-                      >
-                        <Github className="w-4 h-4 text-[#00f0ff] group-hover:scale-110 transition-transform" />
-                        <span>Visit My GitHub Profile</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                    <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-900 space-y-1.5">
-                      <span className="text-[#00f0ff] uppercase tracking-wider font-bold block">Front-End UI Stack</span>
-                      <p className="text-zinc-500 text-[11px] leading-relaxed">
-                        • React 18 / Vue 3<br />
-                        • Tailwind CSS Utility Engine<br />
-                        • Motion animations<br />
-                        • D3.js and Recharts modules
-                      </p>
-                    </div>
-
-                    <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-900 space-y-1.5">
-                      <span className="text-[#ff007f] uppercase tracking-wider font-bold block">Back-end & Sockets</span>
-                      <p className="text-zinc-500 text-[11px] leading-relaxed">
-                        • Node.js & Bun runtime<br />
-                        • Express and Fastify framework<br />
-                        • Event packet streaming (SSE)<br />
-                        • WebSocket server protocols
-                      </p>
-                    </div>
-
-                    <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-900 space-y-1.5">
-                      <span className="text-blue-400 uppercase tracking-wider font-bold block">Integrations</span>
-                      <p className="text-zinc-500 text-[11px] leading-relaxed">
-                        • Baileys connection engine<br />
-                        • Docker containerization<br />
-                        • Heroku / Railway orchestrators<br />
-                        • SSL and end-to-end credential math
-                      </p>
                     </div>
                   </div>
                 </div>

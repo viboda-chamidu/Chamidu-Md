@@ -1,37 +1,35 @@
 {
-  "name": "VIBODA-CHAMIDU-MD",
-  "description": "VIBODA_CHAMIDU Multidevice Whatsapp Bot",
-  "logo": "https://i.ibb.co/0R73PZb5/SulaMd.jpg",
-  "keywords": [
-    "bot"
-  ],
+  "name": "Chamidu MD (2.0.6)",
+  "description": "Chamidu MD has been designed to make things easier and fun while using WhatsApp. 👨‍💻❤️",
+  "logo": "https://telegra.ph/file/ad25b2227fa2a1a01b707.jpg",
+  "keywords": ["chamidu", "bot", "whatsapp bot", "multi device", "chamidu md"],
   "success_url": "/",
   "env": {
-    "SESSION_ID": {
-      "description": "Put the session-id here.",
+    "BOT_NUMBER": {
+      "description": "Put the number here.",
+      "required": true
+    },  
+    "PASSWORD": {
+      "description": "Enter a password of your choice here",
       "required": true
     },
-    "BUTTON": {
-      "description": "true or false",
+    "SESSION_ID": {
+      "description": "Enter session-id here",
       "required": false
     },
-    "AUTO_REACT": {
-      "description": "true or false",
-      "required": false
+    "GITHUB_USERNAME": {
+      "description": "Put your github username here.",
+      "required": true
     },
-    "DELETEMSGSENDTO": {
-      "description": "Your Delete Massage Send Number",
-      "required": false
-    },
-    "ALLWAYS_OFFLINE": {
-      "description": "true or false",
-      "required": false
-    }
+    "GITHUB_AUTH_TOKEN": {
+      "description": "Put your github auth-token here.",
+      "required": true
+    }   
   },
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
     }
   ],
-  "stack": "heroku-24"
+  "stack": "heroku-22"
 }
