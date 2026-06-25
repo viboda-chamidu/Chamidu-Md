@@ -2,13 +2,21 @@ import express, { Response, Request } from "express";
 import path from "path";
 import fs from "fs";
 import { createServer as createViteServer } from "vite";
-import makeWASocket, {
-  DisconnectReason,
-  useMultiFileAuthState,
-  fetchLatestBaileysVersion
-} from "@whiskeysockets/baileys";
+import * as BaileysModule from "@whiskeysockets/baileys";
 import pino from "pino";
 import QRCode from "qrcode";
+
+// Safely resolve makeWASocket and named exports for robust ESM/CJS compatibility
+const makeWASocket = (
+  (BaileysModule.default && (BaileysModule.default as any).default) ||
+  BaileysModule.default ||
+  (BaileysModule as any).makeWASocket ||
+  BaileysModule
+) as any;
+
+const useMultiFileAuthState = BaileysModule.useMultiFileAuthState || (BaileysModule.default as any)?.useMultiFileAuthState;
+const fetchLatestBaileysVersion = BaileysModule.fetchLatestBaileysVersion || (BaileysModule.default as any)?.fetchLatestBaileysVersion;
+const DisconnectReason = BaileysModule.DisconnectReason || (BaileysModule.default as any)?.DisconnectReason;
 
 interface PairSession {
   id: string;
